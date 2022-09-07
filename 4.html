@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style type="text/css">
+    .block {
+      width: 900px;
+      height: 900px;
+    }
+    .coords {
+      width: 50px;
+
+    }
+  </style>
+</head>
+<body>
+<div class="coords">
+  X: <span class="x"></span><br>
+  Y: <span class="y"></span>
+</div>
+<div class="block">
+
+</div>
+
+<script>
+  document.querySelector('.block').onmousemove = function(event) {
+    document.querySelector('.x').innerHTML = event.offsetX;
+    document.querySelector('.y').innerHTML = event.offsetY;
+  }
+</script>
+</body>
+</html>
