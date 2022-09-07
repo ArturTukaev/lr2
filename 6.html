@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Опрос: <br>
+    <p>2+2=?</p>
+    <div>
+      <input type="radio" id="var1">
+      <label for="contactChoice1">5</label>
+
+      <input type="radio" id="var2">
+      <label for="contactChoice2">4</label>
+
+      <input type="radio" id="var3">
+      <label for="contactChoice3">16</label>
+  </div>
+  <div>
+    <button type="button" id="submit">Отправить</button>
+</div>
+
+  </form>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+      let count1 = 0;
+      let count2 = 0;
+      let count3 = 0;
+
+      $('input[type=radio]').change(function() {
+          $(this).prop('checked', false);
+          if ($(this).attr('id') == 'var1') {
+              count1++;
+          }
+          if ($(this).attr('id') == 'var2') {
+              count2++;
+          }
+          if ($(this).attr('id') == 'var3') {
+              count3++;
+          }
+      });
+
+      $('#submit').click(function() {
+          let sum = count1 + count2 + count3;
+          let p1 = count1 / sum * 100;
+          let p2 = count2 / sum * 100;
+          let p3 = count3 / sum * 100;
+          let text = 
+              `За ответ "5" проголосовало: ${count1}, ${p1}%
+              За ответ "4" проголосовало: ${count2}, ${p2}%
+              За ответ "16" проголосовало: ${count3}, ${p3}%`;
+          alert(text);
+      });
+
+</script>
+
+</body>
+</html>
